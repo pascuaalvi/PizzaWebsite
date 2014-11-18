@@ -1,0 +1,8 @@
+<template name="orders">
+  <p class='title'> Welcome {{user}} </p>
+  <div>
+    {{#each product}}
+      {{> showProduct}}
+    {{/each}}
+  </div>
+</template>

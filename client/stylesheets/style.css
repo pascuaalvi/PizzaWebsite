@@ -1,0 +1,29 @@
+.title
+{
+  font-family: "Showcard Gothic";
+  color: #EBB622;
+  font-size: xx-large;
+  text-align:center;
+}
+.text
+{
+  font-family:"Segoe UI";
+  font-size: 14px;
+}
+.heading1
+{
+  font-family: "Showcard Gothic";
+  font-size: 19px;
+  font-weight: normal;
+  font-style: italic;
+  color: #FF9933;
+  text-align: right;
+}
+.heading2
+{
+  font-family: "Segoe UI";
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff6600;
+  text-align: left;
+}
