@@ -17,7 +17,7 @@
   font-weight: normal;
   font-style: italic;
   color: #FF9933;
-  text-align: right;
+  text-align: center;
 }
 .heading2
 {
@@ -26,4 +26,37 @@
   font-weight: bold;
   color: #ff6600;
   text-align: left;
+}
+.fixed
+{
+  position: fixed;
+  top: 350px;
+  right:65px;
+}
+.orderBox {
+  border: 3px solid  #FF9933 ;
+  background-color: #eeeeee;
+}
+.orderBoxPad {
+  border: 3px solid  #FF9933 ;
+  padding: 25px;
+  background-color: #eeeeee;
+}
+.bannertop {
+  background-image:url('/Images/PizzaTopBanner.jpg');
+  background-size:contain;
+  width:100%;
+  min-height:55px;
+}
+.bannerbot {
+  background-image:url('/Images/PizzaBottomBanner.jpg');
+  background-size:contain;
+  width:100%;
+  min-height:55px;
+}
+.complete {
+  background-color: lightgreen;
+}
+.inProgress {
+  background-color: red;
 }

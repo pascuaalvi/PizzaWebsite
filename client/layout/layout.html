@@ -1,6 +1,18 @@
 <template name="layout">
     <div class="container">
       {{> header}}
+      <div class="bannertop">
+      </div>
+      Your Progress:
+      <div style="width:100%">
+          <a class="{{stage1}} btn btn-default navbar-brand" style="width:25%"> Delivery Options </a>
+          <a class="{{stage2}} btn btn-default navbar-brand" style="width:17%"> Your Order </a>
+          <a class="{{stage3}} btn btn-default navbar-brand" style="width:22%"> Delivery Details </a>
+          <a class="{{stage4}} btn btn-default navbar-brand" style="width:36%"> Order Summary & Payment</a>
+      </div>
+      <br>
+      <br>
+      <br>
     <div id="main" class="row-fluid">
       {{#if deliveryStage}}
         {{> delivery}}
@@ -8,6 +20,13 @@
       {{#if orderStage}}
         {{> orders}}
       {{/if}}
+      {{#if pickUpDetailStage}}
+        {{> pickUpDetails}}
+      {{/if}}
+      {{#if deliveryDetailStage}}
+        {{> deliveryDetails}}
+      {{/if}}
     </div>
+     <div class="bannerbot"></div>
   </div>
 </template>
