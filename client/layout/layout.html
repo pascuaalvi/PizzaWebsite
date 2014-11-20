@@ -3,7 +3,7 @@
       {{> header}}
       <div class="bannertop">
       </div>
-      Your Progress:
+      Your Progress: {{progress}}
       <div style="width:100%">
           <a class="{{stage1}} btn btn-default navbar-brand" style="width:25%"> Delivery Options </a>
           <a class="{{stage2}} btn btn-default navbar-brand" style="width:17%"> Your Order </a>
@@ -25,6 +25,9 @@
       {{/if}}
       {{#if deliveryDetailStage}}
         {{> deliveryDetails}}
+      {{/if}}
+      {{#if summaryStage}}
+        {{> summary}}
       {{/if}}
     </div>
      <div class="bannerbot"></div>

@@ -1,4 +1,7 @@
 Template.layout.helpers({
+    progress: function(){
+      return Session.get('progress');
+    },
     currentPage: function() {
       return Session.get('currentState');
     },
@@ -14,9 +17,13 @@ Template.layout.helpers({
     deliveryDetailStage: function(){
       return (Session.get('currentState') === "deliveryDetails")
     },
+    summaryStage: function(){
+      return (Session.get('currentState') === "summary")
+    },
     stage1: function(){
       var state = Session.get('currentState');
       if(state === "delivery"){
+        Session.set('progress',"0%");
         return 'inProgress'
       }
       else{
@@ -26,6 +33,7 @@ Template.layout.helpers({
     stage2: function(){
       var state = Session.get('currentState');
       if(state === "orders"){
+        Session.set('progress',"25%");
         return 'inProgress'
       }
       else if(state === "delivery"){
@@ -38,6 +46,7 @@ Template.layout.helpers({
     stage3: function(){
       var state = Session.get('currentState');
       if(state === "pickUpDetails" || state === "deliveryDetails"){
+        Session.set('progress',"60%");
         return 'inProgress'
       }
       else if(state === "delivery" || state === "orders"){
@@ -48,7 +57,14 @@ Template.layout.helpers({
       }
     },
     stage4: function(){
-      return null;
+      var state = Session.get('currentState');
+      if(state === "summary"){
+        Session.set('progress',"100%");
+        return 'complete'
+      }
+      else{
+        return null;
+      }
     },
 
 });

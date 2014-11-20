@@ -1,0 +1,34 @@
+<template name="summary">
+  <h2 class="title">Thank you {{name}} for visiting the Pizza Place!</h2>
+  <table  style="width:100%">
+    <tr>
+      <td></td>
+      <td>
+        <p class="heading1">Here's a summary of your order:</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+
+      </td>
+      <td class="orderBox">
+        {{#if order}}
+            {{#each order}}
+              {{> orderListContent}}
+            {{/each}}
+          {{/if}}
+      </td>
+      <td>
+
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <p class="heading1">Total Cost: ${{total}}</p>
+      </td>
+      <td></td>
+    </tr>
+  </table>
+</template>

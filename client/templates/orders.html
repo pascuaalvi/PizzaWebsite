@@ -1,0 +1,15 @@
+<template name="orders">
+  <p class='title'> Welcome {{user}}! </p>
+  <div>
+    <table style="border: 1px solid gray; width:100%">
+      <td style="width:80%">
+    {{#each product}}
+      {{> showProduct}}
+    {{/each}}
+      </td>
+      <td class="fixed" style="width:20%">
+        {{> orderList}}
+      </td>
+  </table>
+  </div>
+</template>
