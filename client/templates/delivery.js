@@ -1,15 +1,9 @@
 Template.delivery.events = {
   'click #pickUp': function () {
-    Session.set('deliveryMode', 'pickUp');
-    if(Meteor.userId){
-      Session.set('currentState', "orders");
-    }
+    setDeliveryMode('pickUp');
   },
   'click #delivery': function () {
-    Session.set('deliveryMode', 'delivery');
-    if(Meteor.userId){
-      Session.set('currentState', "orders");
-    }
+    setDeliveryMode('delivery');
   },
 }
 
@@ -19,4 +13,9 @@ Template.delivery.helpers({
   }
 });
 
-//TODO refactor to simpler function
+setDeliveryMode = function (mode){
+  Session.set('deliveryMode', mode);
+  if(Meteor.userId){
+    Session.set('currentState', ORDERS_STATE);
+  }
+}

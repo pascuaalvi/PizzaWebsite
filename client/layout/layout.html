@@ -5,30 +5,15 @@
       </div>
       Your Progress: {{progress}}
       <div style="width:100%">
-          <a class="{{stage1}} btn btn-default navbar-brand" style="width:25%"> Delivery Options </a>
-          <a class="{{stage2}} btn btn-default navbar-brand" style="width:17%"> Your Order </a>
-          <a class="{{stage3}} btn btn-default navbar-brand" style="width:22%"> Delivery Details </a>
-          <a class="{{stage4}} btn btn-default navbar-brand" style="width:36%"> Order Summary & Payment</a>
+          {{#each progressItem}}
+            {{> progressIndicator}}
+          {{/each}}
       </div>
       <br>
       <br>
       <br>
     <div id="main" class="row-fluid">
-      {{#if deliveryStage}}
-        {{> delivery}}
-      {{/if}}
-      {{#if orderStage}}
-        {{> orders}}
-      {{/if}}
-      {{#if pickUpDetailStage}}
-        {{> pickUpDetails}}
-      {{/if}}
-      {{#if deliveryDetailStage}}
-        {{> deliveryDetails}}
-      {{/if}}
-      {{#if summaryStage}}
-        {{> summary}}
-      {{/if}}
+      {{> Template.dynamic template=currentView}}
     </div>
      <div class="bannerbot"></div>
   </div>

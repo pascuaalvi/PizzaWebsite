@@ -1,5 +1,5 @@
 if(Session.get('currentState') == null ){
-      Session.set('currentState', "delivery");
+      Session.set('currentState', DELIVERY_STATE);
 }
 
 if(Session.get('pageTitle') == null ){

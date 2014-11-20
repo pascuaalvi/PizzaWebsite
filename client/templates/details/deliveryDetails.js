@@ -1,10 +1,15 @@
 Template.deliveryDetails.helpers({
-  order: function () {
-    return Session.get('refreshList');
-  },
-  grandTotal: function () {
-    return Session.get('grandTotal');
-  },
+  locationError: function(){
+    if(Session.get('confirm') === true){
+      validateField('location');
+      Session.set('confirm',false);
+    }
+    validateField('location');
+    return Session.get('locationError');
+  }
+});
+
+Template.deliveryDetailsNumbers.helpers({
   deliveryCharge: function() {
     var num = 0;
     if(Session.get('location')){
@@ -26,32 +31,14 @@ Template.deliveryDetails.helpers({
       return "Please fill in a delivery location.";
     }
   },
-  nameError: function(){
-    return Session.get('nameError');
-  },
-  phoneError: function(){
-    return Session.get('phoneError');
-  },
-  addressError: function(){
-    return Session.get('addressError');
-  },
-  locationError: function(){
-    return Session.get('locationError');
+  total: function () {
+    return Session.get('grandTotal');
   }
 });
 
 Template.deliveryDetails.events({
   'change #location': function (){
     updateDeliveryCosts();
-  },
-  'click #confirm': function (){
-    var name = validateField('name');
-    var phone = validateField('phone');
-    var addr = validateField('address');
-    var location = validateField('location');
-    if (Session.get('finalTotal') != null && name && phone && addr && location) {
-      Session.set('currentState','summary')
-    }
   }
 });
 

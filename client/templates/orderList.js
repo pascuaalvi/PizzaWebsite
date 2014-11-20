@@ -17,11 +17,11 @@ Template.orderList.events = {
     if (Meteor.userId) {
       var deliveryOption = Session.get('deliveryMode');
       if (deliveryOption === 'pickUp') {
-        Session.set('currentState', 'pickUpDetails');
+        Session.set('currentState', DETAILS_STATE);
       }
       else if (deliveryOption === 'delivery') {
         if (parseFloat(Session.get('grandTotal')) >= 30) {
-          Session.set('currentState', 'deliveryDetails');
+          Session.set('currentState', DETAILS_STATE);
         }
         else{
           Session.set('warning',"Deliveries must be over $30 in total value.")

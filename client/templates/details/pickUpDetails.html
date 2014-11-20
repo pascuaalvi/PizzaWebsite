@@ -1,100 +1,49 @@
 <template name="pickUpDetails">
-  <table style="width:100%">
-      <tr>
-        <td>
-          <p class="heading1">Your Order:</p>
-        </td>
-        <td>
-          <div class="orderBoxPad">
-          {{#if order}}
-            {{#each order}}
-              {{> orderListContent}}
-            {{/each}}
-          {{/if}}
-        </div>
-        </td>
-        <td>
-          <h4 class="heading1">Total Amount: {{total}}</h4>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Name:</p>
-        </td>
-        <td>
-          <input type="text" id="name" required/>
-        </td>
-        <td>
-            <h5 class="error">{{nameError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Phone:</p>
-        </td>
-        <td>
-          <input type="text" id="phone" required/>
-        </td>
-        <td>
-            <h5 class="error">{{phoneError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Address:</p>
-        </td>
-        <td>
-          <input type="text" id="address" required/>
-        </td>
-        <td>
-            <h5 class="error">{{addressError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Date:</p>
-        </td>
-        <td>
-          <input type="date" id="date" required/>
-        </td>
-        <td>
-            <h5 class="error">{{dateError}}</h5>
-        </td>
-        <td>
-        </td>
-      </tr>
-       <tr>
-        <td>
-          <p class="heading1">Time:</p>
-        </td>
-        <td>
-          <select id="time">
-            <option value="9am">9 A.M.</option>
-            <option value="10am">10 A.M.</option>
-            <option value="11am">11 A.M.</option>
-            <option value="12pm">12 P.M.</option>
-            <option value="1pm">1 P.M.</option>
-            <option value="2pm">2 P.M.</option>
-            <option value="3pm">3 P.M.</option>
-            <option value="4pm">4 P.M.</option>
-            <option value="5pm">5 P.M.</option>
-            <option value="6pm">6 P.M.</option>
-            <option value="7pm">7 P.M.</option>
-            <option value="8pm">8 P.M.</option>
-            <option value="9pm">9 P.M.</option>
-          </select>
-        </td>
-        <script>
-        document.getElementById("time").selectedIndex = -1;
-        </script>
-        <td>
-            <h5 class="error">{{timeError}}</h5>
-        </td>
-        <td>
-        </td>
-      </tr>
-  </table>
-  <div align="center">
-  <input type="image" src="/Images/ConfirmButton.jpg" id="confirm" width="200px" height="140px"/>
-</div>
+  <tr>
+    <td>
+      <p class="heading1">Date:</p>
+    </td>
+    <td>
+      <input type="date" id="date" required/>
+    </td>
+    <td>
+        <h5 class="error">{{dateError}}</h5>
+    </td>
+    <td>
+    </td>
+  </tr>
+   <tr>
+    <td>
+      <p class="heading1">Time:</p>
+    </td>
+    <td>
+      <select id="time">
+        <option value="9am">9 A.M.</option>
+        <option value="10am">10 A.M.</option>
+        <option value="11am">11 A.M.</option>
+        <option value="12pm">12 P.M.</option>
+        <option value="1pm">1 P.M.</option>
+        <option value="2pm">2 P.M.</option>
+        <option value="3pm">3 P.M.</option>
+        <option value="4pm">4 P.M.</option>
+        <option value="5pm">5 P.M.</option>
+        <option value="6pm">6 P.M.</option>
+        <option value="7pm">7 P.M.</option>
+        <option value="8pm">8 P.M.</option>
+        <option value="9pm">9 P.M.</option>
+      </select>
+    </td>
+    <script>
+    document.getElementById("time").selectedIndex = -1;
+    </script>
+    <td>
+        <h5 class="error">{{timeError}}</h5>
+    </td>
+    <td>
+    </td>
+  </tr>
+</template>
+
+<template name="pickUpDetailsNumbers">
+  <h4 class="heading1">Total Order Amount: ${{total}}</h4>
 </template>

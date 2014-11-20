@@ -1,77 +1,24 @@
 <template name="deliveryDetails">
-  <table style="width:100%">
-      <tr>
-        <td>
-          <p class="heading1">Your Order:</p>
-        </td>
-        <td>
-          <div class="orderBoxPad">
-          {{#if order}}
-            {{#each order}}
-              {{> orderListContent}}
-            {{/each}}
-          {{/if}}
-        </div>
-        </td>
-        <td align="left">
-          <h4 class="heading1">Total Order Amount: ${{grandTotal}}</h4>
-          <h4 class="heading1">{{deliveryCharge}}</h4>
-          <h4 class="heading1">Total Amount to Pay:</h4>
-          <h4 class="heading2">{{totalWithDelivery}}</h4>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Name:</p>
-        </td>
-        <td>
-          <input type="text" id="name" required />
-        </td>
-        <td>
-            <h5 class="error">{{nameError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Phone:</p>
-        </td>
-        <td>
-          <input type="text" id="phone" required/>
-        </td>
-        <td>
-            <h5 class="error">{{phoneError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Address:</p>
-        </td>
-        <td>
-          <input type="text" id="address" required/>
-        </td>
-        <td>
-            <h5 class="error">{{addressError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Location:</p>
-        </td>
-        <td>
-          <select id="location">
-            <option value="5">WellingtonCBD</option>
-            <option value="10">Outside WellingtonCBD</option>
-          </select>
-          <script>
-            document.getElementById("location").selectedIndex = -1;
-          </script>
-        </td>
-        <td>
-            <h5 class="error">{{locationError}}</h5>
-        </td>
-      </tr>
-  </table>
-  <div  align="center" >
-    <input type="image" src="/Images/ConfirmButton.jpg" id="confirm" width="200px" height="140px"/>
-  </div>
+  <td>
+    <p class="heading1">Location:</p>
+  </td>
+  <td>
+    <select id="location">
+      <option value="5">WellingtonCBD</option>
+      <option value="10">Outside WellingtonCBD</option>
+    </select>
+    <script>
+      document.getElementById("location").selectedIndex = -1;
+    </script>
+  </td>
+  <td>
+      <h5 class="error">{{locationError}}</h5>
+  </td>
+</template>
+
+<template name="deliveryDetailsNumbers">
+  <h4 class="heading1">Total Order Amount: ${{total}}</h4>
+  <h4 class="heading1">{{deliveryCharge}}</h4>
+  <h4 class="heading1">Total Amount to Pay:</h4>
+  <h4 class="heading2">{{totalWithDelivery}}</h4>
 </template>
