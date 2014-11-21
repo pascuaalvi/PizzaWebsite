@@ -1,16 +1,21 @@
 <template name="showProduct">
-  <tr >
-    <td style="width:25%"><img src="{{imageSrc}}" style="width:200px;height:200px"></td>
-    <td style="width:30%">
+  <div class="list-group-item row">
+    <div class="col-xs-6" >
+      <img src="{{imageSrc}}" style="width:200px;height:200px;float:left">
+    </div>
+    <div class="col-xs-6" >
+      <div>
       <p class="heading1">{{name}}</p>
       <p class="heading2">${{price}}0</p>
       <p class="text">{{desc}}</p>
-    </td>
-    <td style="width:25%" align="center">Quantity:
-      <br>
+      </div>
+      <div>
+      Quantity:
       <input class="btn btn-default" type="number" min="1" max="6" value="1" id="{{name}}">
-      <br>
-      <input class="btn" type="image" src="/Images/AddButton.jpg" id="addToCart">
-    </td>
-  </tr>
+      <input class="btn" type="image" src="/Images/AddButton.jpg" id="addToCart" width="80px">
+      </div>
+    </div>
+    <div>
+    </div>
+  </div>
 </template>
