@@ -1,58 +1,61 @@
 <template name="details">
-  <table style="width:100%">
-      <tr>
-        <td>
-          <p class="heading1">Your Order:</p>
-        </td>
-        <td>
-          <div class="orderBoxPad">
-          {{#if order}}
-            {{#each order}}
-              {{> orderListContent}}
-            {{/each}}
-          {{/if}}
-        </div>
-        </td>
-        <td align="left">
-          {{> Template.dynamic template=deliveryModeNumbers}}
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Name:</p>
-        </td>
-        <td>
-          <input type="text" id="name" required />
-        </td>
-        <td>
-            <h5 class="error">{{nameError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Phone:</p>
-        </td>
-        <td>
-          <input type="text" id="phone" required/>
-        </td>
-        <td>
-            <h5 class="error">{{phoneError}}</h5>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p class="heading1">Address:</p>
-        </td>
-        <td>
-          <input type="text" id="address" required/>
-        </td>
-        <td>
-            <h5 class="error">{{addressError}}</h5>
-        </td>
-      </tr>
-        {{> Template.dynamic template=deliveryMode}}
-  </table>
-  <div  align="center" >
-    <input type="image" src="/Images/ConfirmButton.jpg" id="confirm" width="200px" height="140px"/>
+  <div class="list-group">
+    <div class="list-group-item row">
+      <div class="col-xs-4">
+        <p class="heading1">Your Order:</p>
+      </div>
+      <div class="col-xs-4 orderBoxPad">
+        {{#if order}}
+        {{#each order}}
+        {{> orderListContent}}
+        {{/each}}
+        {{/if}}
+      </div>
+      <div class="col-xs-4">
+      {{> Template.dynamic template=deliveryModeNumbers}}
+      </div>
+    </div>
+
+    <div class="list-group-item row">
+      <div class="col-xs-4">
+        <p class="heading1">Name:</p>
+      </div>
+      <div class="col-xs-4">
+        <input type="text" id="name" required />
+      </div>
+      <div class="col-xs-4">
+        <h5 class="error">{{nameError}}</h5>
+      </div>
+    </div>
+
+    <div class="list-group-item row">
+      <div class="col-xs-4">
+        <p class="heading1">Phone:</p>
+      </div>
+      <div class="col-xs-4">
+        <input type="text" id="phone" required/>
+      </div>
+      <div class="col-xs-4">
+        <h5 class="error">{{phoneError}}</h5>
+      </div>
+    </div>
+
+    <div class="list-group-item row">
+      <div class="col-xs-4">
+        <p class="heading1">Address:</p>
+     </div>
+      <div class="col-xs-4">
+        <input type="text" id="address" required/>
+      </div>
+      <div class="col-xs-4">
+        <h5 class="error">{{addressError}}</h5>
+      </div>
+    </div>
+
+    {{> Template.dynamic template=deliveryMode}}
+
+    <div align="center" >
+      <input type="image" src="/Images/ConfirmButton.jpg" id="confirm" width="200px" height="140px"/>
+    </div>
   </div>
 </template>

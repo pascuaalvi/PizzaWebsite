@@ -1,34 +1,18 @@
 <template name="summary">
   <h2 class="title">Thank you {{name}} for visiting the Pizza Place!</h2>
-  <table  style="width:100%">
-    <tr>
-      <td></td>
-      <td>
-        <p class="heading1">Here's a summary of your order:</p>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>
+  <p class="heading1">Here's a summary of your order:</p>
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4 orderBox">
+      {{#if order}}
+          {{#each order}}
+            {{> orderListContent}}
+          {{/each}}
+        {{/if}}
+    </div>
+    <div class="col-xs-4"></div>
+  </div>
+  <br>
+  <p class="heading1">Total Cost: ${{total}}</p>
 
-      </td>
-      <td class="orderBox">
-        {{#if order}}
-            {{#each order}}
-              {{> orderListContent}}
-            {{/each}}
-          {{/if}}
-      </td>
-      <td>
-
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <p class="heading1">Total Cost: ${{total}}</p>
-      </td>
-      <td></td>
-    </tr>
-  </table>
 </template>

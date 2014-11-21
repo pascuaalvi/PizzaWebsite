@@ -1,19 +1,22 @@
 <template name="deliveryDetails">
-  <td>
-    <p class="heading1">Location:</p>
-  </td>
-  <td>
-    <select id="location">
-      <option value="5">WellingtonCBD</option>
-      <option value="10">Outside WellingtonCBD</option>
-    </select>
-    <script>
-      document.getElementById("location").selectedIndex = -1;
-    </script>
-  </td>
-  <td>
+
+  <div class="list-group-item row">
+    <div class="col-xs-4">
+      <p class="heading1">Location:</p>
+    </div>
+    <div class="col-xs-4">
+      <select id="location">
+        <option value="5">WellingtonCBD</option>
+        <option value="10">Outside WellingtonCBD</option>
+      </select>
+      <script>
+        document.getElementById("location").selectedIndex = -1;
+      </script>
+    </div>
+    <div class="col-xs-4">
       <h5 class="error">{{locationError}}</h5>
-  </td>
+    </div>
+  </div>
 </template>
 
 <template name="deliveryDetailsNumbers">
