@@ -4,7 +4,7 @@
       <p class="heading1">Date:</p>
      </div>
     <div class="col-xs-4">
-      <input type="date" id="date" required/>
+      <input type="text" id="date" placeholder="dd/mm/yyyy" required/>
      </div>
     <div class="col-xs-4">
         <h5 class="error">{{dateError}}</h5>
@@ -31,9 +31,6 @@
         <option value="8pm">8 P.M.</option>
         <option value="9pm">9 P.M.</option>
       </select>
-      <script>
-      document.getElementById("time").selectedIndex = -1;
-      </script>
     </div>
     <div class="col-xs-4">
         <h5 class="error">{{timeError}}</h5>

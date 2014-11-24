@@ -1,13 +1,12 @@
 Template.deliveryDetails.helpers({
   locationError: function(){
-    if(Session.get('confirm') === true){
-      validateField('location');
-      Session.set('confirm',false);
-    }
-    validateField('location');
     return Session.get('locationError');
   }
 });
+
+Template.deliveryDetails.rendered = function () {
+  document.getElementById("location").selectedIndex = -1;
+};
 
 Template.deliveryDetailsNumbers.helpers({
   deliveryCharge: function() {

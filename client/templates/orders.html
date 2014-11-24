@@ -1,12 +1,12 @@
 <template name="orders">
   <p class='title'> Welcome {{user}}! </p>
   <div >
-    <div class="list-group" style="width:70%">
+    <div class="list-group menuWidth" >
     {{#each product}}
       {{> showProduct}}
     {{/each}}
     </div>
-      <div class="fixed" style="width:20%">
+      <div class="fixed sideBarWidth">
         {{> orderList}}
       </div>
   </div>

@@ -68,3 +68,16 @@
 .inProgress {
   background-color: red;
 }
+.menuWidth{
+  width:70%;
+}
+.sideBarWidth{
+  width:20%;
+}
+.moveDown{
+   margin: 2cm 1cm 1cm 1cm;
+}
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+}

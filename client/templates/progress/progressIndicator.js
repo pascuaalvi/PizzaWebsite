@@ -12,10 +12,13 @@ Template.progressIndicator.helpers({
           return 'complete'
         }
         else if(this.id === value){
+          if(this.id === 4){
+            return 'complete';
+          }
           return 'inProgress'
         }
         else{
-          return 'hidden';
+          return '';
         }
       }
       console.log(this);

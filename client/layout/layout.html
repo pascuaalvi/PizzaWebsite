@@ -4,15 +4,12 @@
       <div class="bannertop">
       </div>
       Your Progress: {{progress}}
-      <div style="width:100%">
+      <div class="max-width">
           {{#each progressItem}}
             {{> progressIndicator}}
           {{/each}}
       </div>
-      <br>
-      <br>
-      <br>
-    <div id="main" class="row-fluid">
+    <div id="main" class="moveDown">
       {{> Template.dynamic template=currentView}}
     </div>
      <div class="bannerbot"></div>

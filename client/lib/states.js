@@ -3,31 +3,25 @@ item = [
   id: 1,
   name: "Delivery Options",
   templateName: "delivery",
-  width: "22%"
+  width: "25%"
 },
 {
   id: 2,
-  name: "Your Order",
+  name: "Our Menu",
   templateName: "orders",
-  width: "17%"
+  width: "25%"
 },
 {
   id: 3,
   name: "Order Details",
   templateName: "details",
-  width: "20%"
+  width: "25%"
 },
 {
   id: 4,
-  name: "Order Summary",
-  templateName: "summary",
-  width: "22%"
-},
-{
-  id: 5,
   name: "Finished",
-  templateName: "finished",
-  width: "19%"
+  templateName: "summary",
+  width: "25%"
 }
 ];
 
@@ -39,4 +33,3 @@ DELIVERY_STATE = 0;
 ORDERS_STATE = 1;
 DETAILS_STATE = 2;
 SUMMARY_STATE = 3;
-FINISHED_STATE = 4;
