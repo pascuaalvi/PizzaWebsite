@@ -5,9 +5,11 @@ Template.layout.helpers({
       return progress+"%";
     },
     currentView: function () {
+      checkLogin(Meteor.userId());
       return item[Session.get('currentState')].templateName;
     },
     progressItem: function () {
       return item;
     }
 });
+
