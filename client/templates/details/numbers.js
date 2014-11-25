@@ -1,14 +1,3 @@
-Template.deliveryDetails.helpers({
-  locationError: function(){
-    if(Session.get('confirm') === true){
-      validateField('location');
-      Session.set('confirm',false);
-    }
-    validateField('location');
-    return Session.get('locationError');
-  }
-});
-
 Template.deliveryDetailsNumbers.helpers({
   deliveryCharge: function() {
     var num = 0;
@@ -36,9 +25,9 @@ Template.deliveryDetailsNumbers.helpers({
   }
 });
 
-Template.deliveryDetails.events({
-  'change #location': function (){
-    updateDeliveryCosts();
+Template.pickUpDetailsNumbers.helpers({
+  total: function () {
+    Session.set('finalTotal', sumList());
+    return Session.get('finalTotal');
   }
 });
-

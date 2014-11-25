@@ -14,7 +14,7 @@ item = [
 {
   id: 3,
   name: "Order Details",
-  templateName: "details",
+  templateName: "detailsForm",
   width: "20%"
 },
 {

@@ -1,45 +1,15 @@
 Template.details.helpers({
-  order: function () {
-    return Session.get('refreshList');
+  delivery: function() {
+    return Session.get('deliveryMode') === 'delivery';
   },
-  nameError: function () {
-    return Session.get('nameError');
+  pickUp: function () {
+    return Session.get('deliveryMode') === 'pickUp';
   },
-  phoneError: function () {
-    return Session.get('phoneError');
-  },
-  addressError: function () {
-    return Session.get('addressError');
-  },
-  deliveryMode: function () {
-    var mode = Session.get('deliveryMode');
-    if(mode === 'pickUp'){
-      return "pickUpDetails";
-    }
-    else if(mode === 'delivery'){
-      return "deliveryDetails";
-    }
-  }
-  ,
-  deliveryModeNumbers: function () {
-    var mode = Session.get('deliveryMode');
-    if(mode === 'pickUp'){
-      return "pickUpDetailsNumbers";
-    }
-    else if(mode === 'delivery'){
-      return "deliveryDetailsNumbers";
-    }
+  locationOptions: function() {
+    return [
+        {label: "WellingtonCBD", value: "5"},
+        {label: "Outside WellingtonCBD", value: "10"}
+    ];
   }
 });
 
-Template.details.events({
-  'click #confirm': function (){
-    var name = validateField('name');
-    var phone = validateField('phone');
-    var addr = validateField('address');
-    Session.set('confirm',true);
-    if (Session.get('finalTotal') != null && name && phone && addr) {
-      Session.set('currentState',SUMMARY_STATE);
-    }
-  }
-});
