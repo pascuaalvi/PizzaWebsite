@@ -15,7 +15,8 @@ pickupOrDelivery = function (pickupOutput,deliveryOutput){
     }
     else if(mode === 'delivery'){
       return deliveryOutput;
-};
+    }
+  }
 
 refreshSchema = function () {
   orderSchema = new SimpleSchema([defaultSchema,pickupOrDelivery(pickUpSchema,deliverySchema)]);

@@ -13,3 +13,7 @@ Template.details.helpers({
   }
 });
 
+Template.details.rendered = function () {
+  Meteor.subscribe('allOrders');
+}
+

@@ -1,5 +1,5 @@
 <template name="details">
-  {{# autoForm collection="Orders" id="insertOrderForm" type="method" meteormethod="orderInsert"}}
+  {{# autoForm collection="Orders" id="insertOrderForm" type="method" meteormethod="orderInsert" resetOnSuccess=false}}
     <fieldset>
       <legend> Your Details:</legend>
         {{> afQuickField name="name"}}
@@ -14,5 +14,6 @@
           {{> afQuickField type="datetime-local" name="date"}}
         {{/if}}
     </fieldset>
+    <button type="submit" class="btn btn-primary">Confirm</button> 
   {{/autoForm}}
 </template>
