@@ -1,4 +1,7 @@
 Template.details.helpers({
+  orderList: function () {
+    return Session.get('refreshList');
+  },
   delivery: function() {
     return Session.get('deliveryMode') === 'delivery';
   },
@@ -12,8 +15,4 @@ Template.details.helpers({
     ];
   }
 });
-
-Template.details.rendered = function () {
-  Meteor.subscribe('allOrders');
-}
 
