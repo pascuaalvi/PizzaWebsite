@@ -1,13 +1,3 @@
-Template.deliveryDetails.helpers({
-  locationError: function(){
-    return Session.get('locationError');
-  }
-});
-
-Template.deliveryDetails.rendered = function () {
-  document.getElementById("location").selectedIndex = -1;
-};
-
 Template.deliveryDetailsNumbers.helpers({
   deliveryCharge: function() {
     var num = 0;
@@ -35,9 +25,9 @@ Template.deliveryDetailsNumbers.helpers({
   }
 });
 
-Template.deliveryDetails.events({
-  'change #location': function (){
-    updateDeliveryCosts();
+Template.pickUpDetailsNumbers.helpers({
+  total: function () {
+    Session.set('finalTotal', sumList());
+    return Session.get('finalTotal');
   }
 });
-

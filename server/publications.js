@@ -2,7 +2,8 @@ Meteor.publish('allProducts', function() {
   return Products.find();
 });
 
-Meteor.publish('userOrders',function(userId) {
+
+Meteor.publish('orders',function(userId) {
   return Orders.find({userId: userId});
 });
-// Still no subscriptions
+

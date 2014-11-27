@@ -1,13 +1,14 @@
 Template.details.helpers({
-  order: function () {
+  orderList: function () {
     return Session.get('refreshList');
   },
-  nameError: function () {
-    return Session.get('nameError');
+  delivery: function() {
+    return Session.get('deliveryMode') === 'delivery';
   },
-  phoneError: function () {
-    return Session.get('phoneError');
+  pickUp: function () {
+    return Session.get('deliveryMode') === 'pickUp';
   },
+<<<<<<< HEAD
   addressError: function () {
     return Session.get('addressError');
   },
@@ -70,3 +71,13 @@ pickupOrDelivery = function (pickupOutput,deliveryOutput){
       return deliveryOutput;
     }
 }
+=======
+  locationOptions: function() {
+    return [
+        {label: "WellingtonCBD", value: "5"},
+        {label: "Outside WellingtonCBD", value: "10"}
+    ];
+  }
+});
+
+>>>>>>> detailForms
