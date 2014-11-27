@@ -1,9 +1,9 @@
-refreshList = function () {
+orderList = function () {
   // The list of user orders
   var freshList = new Array();
   var freshIndex = 0;
   // Our map of product -> quantity
-  var orders = Session.get('orders');
+  var orders = Session.get('orderList');
   // Loop through map to find non-zero quantities
   for (index = 0; index < orders.length; index++) {
     if(orders[index].quantity !== 0){
@@ -17,14 +17,14 @@ refreshList = function () {
     return false;
   }
   else{
-    Session.set('refreshList',freshList);
+    Session.set('orderList',freshList);
     return freshList;
   }
 };
 
 sumList = function () {
   var sum = 0;
-  var orders = Session.get('refreshList');
+  var orders = Session.get('orderList');
   for (index = 0; index < orders.length; index++) {
       sum += parseFloat(orders[index].price * orders[index].quantity);
   }

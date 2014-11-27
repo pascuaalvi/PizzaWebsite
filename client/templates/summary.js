@@ -3,30 +3,13 @@ Template.summary.helpers({
     return Session.get('name');
   },
   order: function () {
-    return Session.get('refreshList');
+    return Session.get('orderList');
   },
   total: function () {
     return Session.get('finalTotal')
   }
 });
 
-Template.summary.events = {
-  'click #checkOut': function (e,t) {
-    e.preventDefault();
-
-    if (Meteor.userId) {
-      var deliveryOption = Session.get('deliveryMode');
-      if (deliveryOption === 'pickUp') {
-        Session.set('currentState', DETAILS_STATE);
-      }
-      else if (deliveryOption === 'delivery') {
-        if (parseFloat(Session.get('grandTotal')) >= 30) {
-          Session.set('currentState', DETAILS_STATE);
-        }
-        else{
-          Session.set('warning',"Deliveries must be over $30 in total value.")
-        }
-      }
-    }
-  }
-}
+Template.summary.rendered = function () {
+	Meteor.subscribe('orders', Meteor.userId());
+};

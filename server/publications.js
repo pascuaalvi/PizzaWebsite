@@ -2,8 +2,6 @@ Meteor.publish('allProducts', function() {
   return Products.find();
 });
 
-
-Meteor.publish('orders',function(userId) {
-  return Orders.find({userId: userId});
+Meteor.publish('orders', function (userID) {
+	return Orders.find({userId: userID});
 });
-
