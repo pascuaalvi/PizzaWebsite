@@ -15,7 +15,7 @@ Template.progressIndicator.helpers({
           return 'inProgress'
         }
         else{
-          return 'hidden';
+          return '';
         }
       }
       console.log(this);
