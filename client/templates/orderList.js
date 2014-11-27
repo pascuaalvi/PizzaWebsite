@@ -1,6 +1,6 @@
 Template.orderList.helpers({
   order: function () {
-    return refreshList();
+    return orderList();
   },
   grandTotal: function () {
     return sumList();

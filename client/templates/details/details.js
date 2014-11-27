@@ -1,6 +1,6 @@
 Template.details.helpers({
   orderList: function () {
-    return Session.get('refreshList');
+    return Session.get('orderList');
   },
   delivery: function() {
     return Session.get('deliveryMode') === 'delivery';

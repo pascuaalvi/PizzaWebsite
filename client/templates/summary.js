@@ -3,7 +3,7 @@ Template.summary.helpers({
     return Session.get('name');
   },
   order: function () {
-    return Session.get('refreshList');
+    return Session.get('orderList');
   },
   total: function () {
     return Session.get('finalTotal')

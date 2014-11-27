@@ -1,7 +1,7 @@
 Template.detailsForm.helpers({
   order: function () {
     refreshSchema();
-    return Session.get('refreshList');
+    return Session.get('orderList');
   },
   deliveryModeNumbers: function () {
     return pickupOrDelivery("pickUpDetailsNumbers","deliveryDetailsNumbers");

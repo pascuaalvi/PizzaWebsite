@@ -14,7 +14,7 @@ initialiseOrderList = function(){
       price: allOrders[index].price,
       quantity:0};
   }
-  Session.set('orders',orders);
+  Session.set('orderList',orders);
   return orders;
 }
 
