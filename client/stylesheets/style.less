@@ -1,0 +1,112 @@
+// Libraries
+@import "util/constants.less";
+@import "util/functions.less";
+@import "util/media.less";
+
+/**
+
+  Style
+
+**/
+
+ .title
+{
+  .impact (@fontSpecial,@titleSize, normal, @titleColor, center);
+}
+.text
+{
+  .impact (@fontNormal, normalTextSize, normal, @textColor, '');
+}
+.progressText
+{
+  .impact (@fontNormal, @headingMainSize , normal, @textColor, center);
+
+  @media @phone {
+    font-size: @headingMainSize * (@phoneRatio/15);
+  }
+  @media @tablet {
+    font-size: @headingMainSize * (@tabletRatio/15);
+  }
+  @media @desktop {
+    font-size: @headingMainSize * (@desktopRatio/15);
+  }
+  @media @super-desktop {
+    font-size: @headingMainSize * (@super-desktopRatio/15);
+  }
+}
+.heading1
+{
+  .impact (@fontSpecial, @headingMainSize, normal, @headingMain, center);
+}
+.heading2
+{
+  .impact (@fontSpecial, @headingSubSize, bold, @headingSub, center);
+}
+.error
+{
+  .impact (@fontNormal, normalTextSize, bold, @errorColor, left);
+}
+.fixed
+{
+  position: fixed;
+  top: 350px;
+  right:5%;
+}
+.orderBox {
+  border: 3px solid  #FF9933 ;
+  background-color: #eeeeee;
+}
+.orderBoxPad {
+  .orderBox;
+  padding: 25px;
+}
+.bannertop {
+  .backgroundImage(@topBanner);
+}
+.bannerbot {
+  .backgroundImage(@botBanner);
+}
+.complete {
+  background-color: lightgreen;
+}
+.inProgress {
+  background-color: red;
+}
+.product {
+
+  display:block;
+  margin: auto;
+
+  @media @phone {
+    width: @phoneRatio;
+  }
+  @media @tablet {
+    width: @tabletRatio;
+  }
+  @media @desktop {
+    width: @desktopRatio;
+  }
+  @media @super-desktop {
+    width: @super-desktopRatio;
+  }
+}
+.inactiveLink {
+   pointer-events: none;
+   cursor: default;
+   padding-left: 2px;
+}
+.inputControl {
+  @media @phone {
+    width: @phoneInputRatio;
+  }
+  @media @tablet {
+    width: @tabletInputRatio;
+  }
+  @media @desktop {
+    width: @desktopInputRatio;
+  }
+  @media @super-desktop {
+    width: @super-desktopInputRatio;
+  }
+}
+

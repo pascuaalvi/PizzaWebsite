@@ -2,16 +2,16 @@
   {{# autoForm collection="Orders" id="insertOrderForm" type="method" meteormethod="orderInsert" resetOnSuccess=false}}
     <fieldset>
       <legend> Your Details:</legend>
-        {{> afQuickField name="name"}}
-        {{> afQuickField name="phone"}}
-        {{> afQuickField name="address"}}
+        {{> afQuickField name="name" class="inputControl"}}
+        {{> afQuickField name="phone" class="inputControl"}}
+        {{> afQuickField name="address" class="inputControl"}}
 
         {{#if delivery}}
-          {{> afFormGroup name="location" options=locationOptions}}
+          {{> afFormGroup name="location" options=locationOptions class="inputControl"}}
         {{/if}}
 
         {{#if pickUp}}
-          {{> afQuickField type="datetime-local" name="date"}}
+          {{> afQuickField type="datetime-local" name="date" class="inputControl"}}
         {{/if}}
     </fieldset>
     <button type="submit" class="btn btn-primary">Confirm</button>
