@@ -9,3 +9,7 @@ Template.summary.helpers({
     return Session.get('finalTotal')
   }
 });
+
+Template.summary.rendered = function () {
+	Meteor.subscribe('orders', Meteor.userId());
+};

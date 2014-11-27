@@ -16,3 +16,9 @@ Template.details.helpers({
   }
 });
 
+Template.details.events({
+     'change #location': function(e,t){
+        var location = document.getElementById('location').value;
+        Session.set('location', location);
+     }
+ });
