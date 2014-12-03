@@ -1,5 +1,5 @@
 Template.header.helpers({
-  pageTitle: function() {
+  pageTitle: function () {
     return Session.get('pageTitle');
   }
 });
@@ -9,3 +9,7 @@ orderHistory = function () {
     Session.set('currentState', 'orderHistory');
   }
 }
+
+Tracker.autorun(function(){
+  Meteor.subscribe('userData');
+});
