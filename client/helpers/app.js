@@ -10,7 +10,7 @@ Meteor.startup(function () {
       language = (window.navigator.userLanguage || window.navigator.language)
       language = getLanguage(language);
     }
-    i18n.setLanguage('fr_FR');
+    i18n.setLanguage(language);
 });
 
 checkLogin = function (userId) {
